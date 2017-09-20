@@ -93,13 +93,20 @@ void HE5Parser::print()
             HE5Var v = s.geo_var_list.at(j);
             cout << "Swath Geo Var Name=" << v.name << endl;
             cout << "Swath Geo Var Dim Size=" << v.dim_list.size() << endl;
+            cout <<"swath Geo Var MaxDim Size= "<<v.max_dim_list.size() <<endl;
             unsigned int k = 0;
             for(k=0; k < v.dim_list.size(); k++) {
                 HE5Dim d = v.dim_list.at(k);
                 cout << "Swath Geo Var Dim Name=" << d.name;
                 cout << " Size=" << d.size << endl;
             }
-        }
+
+            for(k=0; k < v.max_dim_list.size(); k++) {
+                HE5Dim d = v.max_dim_list.at(k);
+                cout << "Swath Geo Var Max Dim Name=" << d.name;
+                cout << " Size=" << d.size << endl;
+            }
+       }
 
         cout << "Swath Data Var Size=" << s.data_var_list.size() 
              << endl;

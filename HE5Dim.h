@@ -8,6 +8,7 @@ using namespace std;
 struct HE5Dim {
     string name;
     int size;
+    int max_size;
 };
 
 #endif
