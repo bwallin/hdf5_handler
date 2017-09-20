@@ -42,7 +42,6 @@ DIMENSION_NAME  	DimensionName
 DATA_FIELD_NAME		DataFieldName
 GEO_FIELD_NAME		GeoFieldName
 DIMENSION_LIST		DimList
-MAX_DIMENSION_LIST      MaxdimList 
 COMPRESSION_TYPE        CompressionType
 PIXELREGISTRATION	PixelRegistration=
 GRIDORIGIN		GridOrigin=
