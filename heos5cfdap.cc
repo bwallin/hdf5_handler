@@ -150,6 +150,9 @@ void map_eos5_cfdds(DDS &dds, hid_t file_id, const string & filename) {
         // Retrieve all HDF5 info(Not the values)
         f->Retrieve_H5_Info(filename.c_str(),file_id,include_attr);
 
+        // Handle Non-EOS5 varibles
+        f->Handle_NONEOS5_Vars();
+
         // Adjust EOS5 Dimension names/sizes based on the parsed results
         f->Adjust_EOS5Dim_Info(&p);
 
@@ -334,6 +337,10 @@ void map_eos5_cfdas(DAS &das, hid_t file_id, const string &filename) {
         bool grids_mllcv = c.check_grids_multi_latlon_coord_vars(&p);
 
         f->Retrieve_H5_Info(filename.c_str(),file_id,include_attr);
+
+        // Handle Non-EOS5 varibles
+        f->Handle_NONEOS5_Vars();
+
         f->Adjust_EOS5Dim_Info(&p);
         f->Add_EOS5File_Info(&p, grids_mllcv);
         f->Add_Dim_Name(&p);

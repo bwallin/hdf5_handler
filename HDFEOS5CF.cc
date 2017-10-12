@@ -2893,7 +2893,9 @@ void EOS5File::Adjust_Per_Var_Dim_NewName_Before_Flattening(T* var, bool mixed_e
             // will handle the current HDF-EOS5 products. Improvement for complicate HDF-EOS5 products
             // will be supported as demanded in the future. KY 2012-1-26
             if (num_grids > 1) {
+ cerr<<"var name is "<<var->newname <<endl;
                 for (vector<Dimension *>::iterator ird = var->dims.begin(); ird != var->dims.end(); ird++) {
+ cerr<<"dimension name is "<<(*ird)->newname <<endl;
                     if ((*ird)->newname.size() <= eos5typestr.size())
                         throw5("The size of the dimension new name ", (*ird)->newname, "of variable ", var->newname,
                             " is too small");

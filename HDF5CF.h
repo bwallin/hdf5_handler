@@ -1158,6 +1158,9 @@ public:
     /// Retrieve coordinate variable attributes.
     void Retrieve_H5_CVar_Supported_Attr_Values();
 
+    /// Remove non-compliant variables.
+    void Handle_NONEOS5_Vars();
+
     /// Handle unsupported HDF5 datatypes for HDF-EOS5 products.
     void Handle_Unsupported_Dtype(bool) throw (Exception);
 
