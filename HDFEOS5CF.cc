@@ -93,6 +93,7 @@ EOS5CVar::EOS5CVar(Var*var)
 
 }
 
+
 //This method will effectively remove any dimnames like
 // ???/XDim or ???/YDim from the dimension name set. 
 // Use this function in caution.
@@ -159,6 +160,10 @@ void EOS5File::Retrieve_H5_Info(const char *path, hid_t file_id, bool /*include_
     // Since we need to check the attribute info in order to determine if the file is augmented to netCDF-4,
     // we need to retrieve the attribute info also.
     File::Retrieve_H5_Info(path, file_id, true);
+}
+
+void EOS5File::Handle_NONEOS5_Vars() {
+
 }
 
 void EOS5File::Retrieve_H5_CVar_Supported_Attr_Values()
